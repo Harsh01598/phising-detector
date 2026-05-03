@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhishLink | AI Phishing Detection</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet"/>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- 🔹 Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i data-lucide="shield-check"></i> Phish<span>Link</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#">Scanner</a></li>
+        <li><a href="#">Datasets</a></li>
+        <li><a href="#">Performance</a></li>
+      </ul>
+
+      <div class="model-badge">AI Model: URL-Classifier-v1</div>
+    </div>
+  </nav>
+
+  <!-- 🔹 Main Container -->
+  <div class="container">
+
+    <!-- 🔥 HERO SECTION -->
+    <section class="hero">
+      <h1>Advanced <span class="highlight">Link Verification</span></h1>
+
+      <p>
+        Real-time phishing detection using machine learning and lexical feature analysis.
+      </p>
+
+      <!-- 🔍 SCANNER -->
+      <div class="scanner-box">
+
+        <!-- INPUT -->
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="urlInput"
+            placeholder="Enter URL (e.g., https://secure-login.bank.com)"
+            required
+          />
+          <button id="analyzeBtn">Verify Link</button>
+        </div>
+
+        <!-- ⏳ LOADER -->
+        <div id="loader" class="hidden">
+          <div class="shimmer-bar"></div>
+          <p id="loaderText" style="color: var(--primary)">
+            Connecting to AI model...
+          </p>
+        </div>
+
+        <!-- 📊 RESULT -->
+        <div id="resultSection" class="hidden">
+          <div class="result-card">
+
+            <!-- LEFT: Prediction -->
+            <div class="prediction">
+              <h2 id="predictionLabel">Analyzing...</h2>
+
+              <div class="gauge-container">
+                <div class="gauge-fill" id="gauge"></div>
+              </div>
+
+              <p>
+                Phishing Probability:
+                <span id="confScore" style="font-weight: bold">0%</span>
+              </p>
+            </div>
+
+            <!-- RIGHT: Logic (Static UI for now) -->
+            <div class="logic-list">
+              <div class="logic-item">
+                <span>Lexical Feature Analysis</span>
+                <i data-lucide="activity" style="width:16px;color:var(--primary)"></i>
+              </div>
+
+              <div class="logic-item">
+                <span>Domain & Structure Check</span>
+                <i data-lucide="globe" style="width:16px;color:var(--primary)"></i>
+              </div>
+
+              <div class="logic-item">
+                <span>Protocol & Security Signals</span>
+                <i data-lucide="lock" style="width:16px;color:var(--primary)"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 📊 INFO SECTION -->
+    <section class="info-grid">
+
+      <div class="info-card">
+        <h3><i data-lucide="database"></i> Training Data</h3>
+        <p>
+          Model trained on large-scale phishing and legitimate URL datasets.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3><i data-lucide="brain-circuit"></i> Model Logic</h3>
+        <p>
+          Uses ensemble ML algorithms with optimized feature selection.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3><i data-lucide="bar-chart-3"></i> Performance</h3>
+        <p>
+          High accuracy with fast real-time inference via backend API.
+        </p>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+  <!-- Initialize Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
